@@ -12,3 +12,12 @@ npm install
 npm start
 ```
 
+2. Start the client(In a seperate terminal):
+
+```bash
+cd ../client
+npm install
+npm run dev
+```
+
+The client expects the server at `http://localhost:5000`.
