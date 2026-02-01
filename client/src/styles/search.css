@@ -52,11 +52,11 @@
 .search-dropdown-wrap { position: relative; display: inline-block; }
 .search-dropdown { position: relative; right: auto; top: auto; width: 220px; background: rgba(17,17,17,0.98); color: var(--header-color); padding: 0.35rem; border-radius: 6px; box-shadow: 0 8px 22px rgba(0,0,0,0.28); z-index: 1000; }
 .search-dropdown .form-control {
-  height: 34px;
+  height: 36px;
   margin-bottom: 0;
-  font-size: 0.95rem;
-  padding-left: 48px;
-  /* subtle light background to contrast with purple header; use !important to override Bootstrap defaults */
+  font-size: 0.98rem;
+  padding-left: 48px; /* keep space for the icon */
+  padding-right: 56px; /* room for right-side submit button */
   background: var(--input-bg) !important;
   color: var(--header-color) !important;
   -webkit-text-fill-color: var(--header-color) !important;
@@ -86,6 +86,31 @@
 .search-input-wrap { position: relative; }
 .search-input-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.98); pointer-events: none; z-index: 6; font-size: 18px; line-height: 1; }
 .search-actions { display:none; }
+
+/* inline submit button (arrow) placed at the right inside the input */
+.search-submit {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: transparent; /* keep button itself transparent */
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: none;
+  z-index: 12;
+}
+
+.search-submit svg { display: block; color: #ffffff; }
+
+.search-submit:focus { outline: 2px solid rgba(255,255,255,0.16); border-radius: 6px; }
 
 /* ensure we can place the search at top right of app-container */
 .app-controls { position: relative; }
