@@ -1,8 +1,28 @@
-# Flickr Public Feed Viewer
 
-A small app with a Node.js/Express backend and a Vite + React frontend that fetches and displays images from Flickr's public feed.
+A small demo app for Buzz Solutions: a Node.js/Express backend and a Vite + React frontend that fetches and displays images from Flickr's public feed.
+
+Table of contents
+
+- [Quick start](#quick-start)
+- [Run together](#run-together)
+- [Run separately](#run-separately)
+- [Testing](#testing)
 
 Quick start
+
+Running frontend and backend together
+
+To run the server and client concurrently use the included script. From the project root:
+
+```bash
+chmod +x ./scripts/start-dev.sh  # make executable (only needed once)
+./scripts/start-dev.sh
+```
+
+The script starts both `server` (`npm start`) and `client` (`npm run dev`) and will stop both when you press Ctrl+C.
+
+Running backend
+
 
 1. Start the server
 
@@ -53,16 +73,3 @@ Run in watch mode:
 ```bash
 npm test -- --watch
 ```
-
-Integration tests: if you want tests that exercise HTTP endpoints (start the app and hit routes), I can add `supertest`-based integration tests and an example test that boots the server.
-
-Running frontend and backend together
-
-To run the server and client concurrently during development, use the included script. From the project root:
-
-```bash
-chmod +x ./scripts/start-dev.sh  # make executable (only needed once)
-./scripts/start-dev.sh
-```
-
-The script starts both `server` (`npm start`) and `client` (`npm run dev`) and will stop both when you press Ctrl+C.
