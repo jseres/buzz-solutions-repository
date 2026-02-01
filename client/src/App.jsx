@@ -26,7 +26,12 @@ export default function App() {
   // need to remove this before pushing so I just test fetchPhotos inside the 
   return (
     <div className="container-fluid p-0">
-      
+      <Header
+        query={query}
+        setQuery={setQuery}
+        fetchPhotos={fetchPhotos}
+        searchInputRef={searchInputRef}
+      />
 
       <AppContainer photos={photos} />
     </div>
