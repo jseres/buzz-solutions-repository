@@ -1,0 +1,165 @@
+.photo-card:hover .photo-meta,
+.photo-card:focus-within .photo-meta {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.photo-meta .meta-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* layout left/right inside meta */
+.meta-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.meta-stats {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255,255,255,0.95);
+  font-size: 0.85rem;
+}
+
+.stat svg {
+  display: block;
+  color: rgba(255,255,255,0.95);
+}
+
+.stat-count {
+  font-weight: 600;
+}
+
+.photo-date {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.92);
+}
+
+.photo-title {
+  font-size: 0.88rem; /* slightly smaller */
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.app-title {
+  font-size: 3.2rem; /* larger, centered title */
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+}
+.app-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 6px;
+  background: linear-gradient(90deg,#ff5a5f,#ffb400);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* inline logo that sits to the left of the title and aligns with app-container */
+.header-inline-logo {
+  position: absolute;
+  left: calc(50% - 550px + 1rem); /* align with left edge of .app-container (max-width:1100px) */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 64px;
+  width: auto;
+  display: block;
+  z-index: 1200;
+}
+
+/* Responsive: scale header down on small screens */
+@media (max-width: 1100px) {
+  /* switch to left-aligned fixed offset when viewport approaches container width */
+  .header-inline-logo { left: 1rem; }
+}
+
+@media (max-width: 900px) {
+  .header-row { padding: 1.8rem 0.75rem; min-height: 32vh; }
+  .app-title { font-size: 2.2rem; }
+  .app-title::after { width: 70px; height: 6px; margin-top: 8px; }
+  .header-row .search-dropdown-wrap { right: 0.75rem; bottom: 0.75rem; top: auto; transform: none; }
+  .header-inline-logo { height: 56px; left: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .header-row { padding: 1rem 0.6rem; min-height: 24vh; }
+  .app-title { font-size: 1.4rem; }
+  .app-title::after { width: 56px; height: 5px; margin-top: 6px; }
+  .header-row .search-dropdown-wrap { right: 0.5rem; bottom: 0.5rem; top: auto; transform: none; }
+  .search-dropdown { width: 160px; }
+  .header-inline-logo { height: 44px; left: 0.5rem; }
+}
+
+/* App-specific container to increase side margins */
+.container.app-container {
+  max-width: 1100px !important; /* override Bootstrap container widths */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative; /* allow absolute placement of logo inside the container */
+}
+
+/* container logo removed; header uses inline logo next to title */
+
+.photo-author {
+  font-size: 0.72rem; /* smaller author text */
+  color: rgba(255,255,255,0.9);
+}
+
+.photo-tags {
+  margin-top: 0.45rem;
+}
+
+.photo-tags .badge {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 0;
+  margin-right: 0.35rem;
+  font-size: 0.7rem;
+}
+
+.photo-card .view-link { display: none; }
+
+.search-bar { max-width: 720px; }
+
+.tag-dropdown {
+  position: absolute;
+  right: 0;
+  top: 2.4rem;
+  background: rgba(0,0,0,0.9);
+  padding: 0.4rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  z-index: 1000;
+}
+
+.tag-dropdown .badge {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
